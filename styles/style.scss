@@ -1,0 +1,105 @@
+$primary: rgb(95, 0, 0);
+$primary-alt: rgb(214, 22, 22);
+$secondary: rgb(140, 119, 0);
+$secondary-alt: rgba(232, 200, 16, 0.8);
+$tertiary: ghostwhite;
+$background1: lightblue;
+
+:root {
+    --grid-rows: 1;
+    --grid-cols: 1;
+}
+
+@mixin flexbox($centering) {
+    display: flex;
+    justify-content: $centering;
+    align-items: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    @include flexbox(center);
+    background: $background1;
+    height: 100vh;
+
+}
+
+.etch-container {
+    @include flexbox(space-around);
+    position: absolute;
+    flex-direction: column;
+    width: 75%;
+    height: 90%;
+    background: linear-gradient(to right, $primary, $primary-alt, salmon 95%);
+    border-radius: 20px;
+    box-shadow: 4px 4px 40px rgba(25, 25, 25);
+    border: 1px solid $tertiary;
+
+}
+
+.header {
+
+    font-size: 50px;
+    font-family: cursive;
+    background-image: linear-gradient(to right, $secondary, $secondary-alt);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+span {
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.grid-container {
+    @include flexbox(center);
+    position: relative;
+    height: 450px;
+    width: 800px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, rgb(52, 52, 52), $tertiary);
+    border: 2px solid rgb(52, 52, 52);
+}
+
+#clear-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 850px;
+
+}
+
+button {
+    @include flexbox(center);
+    font-size: 2rem;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, gray, $tertiary);
+    margin-bottom: 10px;
+}
+
+#grid {
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+
+.cell {
+    display:inline-block;
+    height: 4px;
+    width: 4px;
+    background: $tertiary;
+    margin: 0;
+    border: none;
+    outline: 1px solid black;
+}
