@@ -1,7 +1,8 @@
 $primary: rgb(95, 0, 0);
 $primary-alt: rgb(214, 22, 22);
-$secondary: rgb(140, 119, 0);
-$secondary-alt: rgba(232, 200, 16, 0.8);
+$secondary:  rgba(175, 151, 14, 0.8);
+$secondary1: yellow;
+$secondary-alt: rgb(255, 255, 139);
 $tertiary: ghostwhite;
 $background1: lightblue;
 
@@ -46,7 +47,7 @@ body {
 
     font-size: 50px;
     font-family: cursive;
-    background-image: linear-gradient(to right, $secondary, $secondary-alt);
+    background-image: linear-gradient(to right, $secondary, $secondary1, $secondary-alt);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -68,6 +69,10 @@ span {
     border-radius: 10px;
     background-image: linear-gradient(to right, rgb(52, 52, 52), $tertiary);
     border: 2px solid rgb(52, 52, 52);
+
+    &:hover {
+        border: 2px solid $secondary1;
+    }
 }
 
 #clear-btn {
@@ -85,6 +90,10 @@ button {
     border-radius: 50%;
     background-image: linear-gradient(to right, gray, $tertiary);
     margin-bottom: 10px;
+
+    &:hover {
+        border: 2px solid $secondary1;
+    }
 }
 
 #grid {
